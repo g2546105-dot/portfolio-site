@@ -1,0 +1,393 @@
+/* 基本設定 */
+
+body {
+    background: #dae2ff;
+    color: black;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 50px;
+}
+
+section {
+    padding: 10px 30px;
+}
+
+/* ヘッダー・ナビゲーション */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: fixed;
+    padding: 0px 30px;
+    background: #9cadf07e;
+    height: 75px;
+    top: 0;
+}
+
+nav {
+    display: flex;
+    gap: 28px;
+}
+
+nav a:hover {
+    color: #9c9393;
+}
+
+/* Top セクション */
+
+#top {
+    padding-top: 100px;
+}
+
+/* 写真切り替え機能 */
+
+.photo-switcher {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* ラジオボタンを隠す */
+
+.photo-switcher input {
+    display: none;
+}
+
+/* 写真を表示する領域 */
+
+.photos {
+    width: 280px;
+}
+
+/* 写真本体 */
+
+.photos img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    display: none;
+}
+
+/* Change Photoボタン */
+
+.photo-buttons label {
+    display: none;
+    padding: 10px 15px;
+    background: #9cadf0;
+    cursor: pointer;
+}
+
+/* 1枚目 */
+
+#photo1:checked ~ .photos .pic1 {
+    display: block;
+}
+
+#photo1:checked ~ .photo-buttons .button2 {
+    display: block;
+}
+
+/* 2枚目 */
+
+#photo2:checked ~ .photos .pic2 {
+    display: block;
+}
+
+#photo2:checked ~ .photo-buttons .button3 {
+    display: block;
+}
+
+/* 3枚目 */
+
+#photo3:checked ~ .photos .pic3 {
+    display: block;
+}
+
+#photo3:checked ~ .photo-buttons .button4 {
+    display: block;
+}
+
+/* 4枚目 */
+
+#photo4:checked ~ .photos .pic4 {
+    display: block;
+}
+
+#photo4:checked ~ .photo-buttons .button1 {
+    display: block;
+}
+
+/* Works セクション */
+
+/* Worksの写真一覧 */
+
+#works-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    max-width: 960px;
+}
+
+/* 作品カード */
+
+.work-card {
+    width: 100%;
+    transition: transform 0.3s;
+}
+
+/* 作品カードの写真 */
+
+.work-card img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    display: block;
+    border-radius: 8px;
+}
+
+/* マウスを乗せたときの動き */
+
+.work-card:hover {
+    transform: translateY(-5px);
+}
+
+/* 写真が未登録の場合 */
+
+.coming-soon {
+    grid-column: 1 / -1;
+    padding: 40px 20px;
+    text-align: center;
+    color: #666;
+}
+
+/* カテゴリー・並び替え */
+
+.works-controls {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.works-controls select {
+    padding: 10px;
+    font-size: 16px;
+}
+
+/* 作品のカテゴリー名 */
+
+.work-category {
+    font-size: 14px;
+    padding-top: 14px;
+    color: #9c9c9c;
+}
+
+/* 作品の制作・体験年 */
+
+.work-year {
+    font-size: 10px;
+    margin-top: 10px;
+}
+
+/* フッター */
+
+footer {
+    padding: 20px 30px;
+    font-size: 15px;
+}
+
+/* バイトの写真は元の縦横比で表示 */
+.work-card img[src="./media/job.jpg"] {
+    max-width: 280px;
+    height: auto;
+}
+
+/* スマートフォン対応 */
+@media (max-width: 600px) {
+    html {
+        scroll-padding-top: 90px;
+    }
+
+    body {
+        margin: 0;
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    /* ヘッダー */
+    header,
+    body.weather-enabled header {
+        left: 0;
+        z-index: 5;
+        height: 75px;
+        padding: 0 14px;
+    }
+
+    header > a {
+        font-size: 16px;
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+
+    nav,
+    body.weather-enabled nav {
+        gap: 14px;
+        flex-shrink: 0;
+    }
+
+    nav a {
+        display: inline-flex;
+        align-items: center;
+        min-height: 44px;
+        font-size: 14px;
+    }
+
+    /* 各セクション */
+    section {
+        padding: 20px 16px;
+        overflow-wrap: anywhere;
+    }
+
+    #top {
+        padding-top: 95px;
+    }
+
+    body.weather-enabled main > section {
+        margin: 16px 12px;
+        padding: 20px 16px;
+    }
+
+    body.weather-enabled #top {
+        margin-top: 91px;
+        padding-top: 20px;
+    }
+
+    /* トップの写真と切り替えボタン */
+    .photo-switcher,
+    body.weather-enabled .photo-switcher {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+        min-width: 0;
+    }
+
+    .photos,
+    body.weather-enabled .photos {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    .photos img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    .photo-buttons label {
+        min-height: 44px;
+        padding: 11px 16px;
+        border-radius: 8px;
+        text-align: center;
+    }
+
+    /* Worksを1列にする */
+    #works-grid,
+    body.weather-enabled #works-grid {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 24px;
+    }
+
+    .work-card,
+    .work-info {
+        min-width: 0;
+        overflow-wrap: anywhere;
+    }
+
+    .work-card img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+    }
+
+    /* バイトの写真は元の縦横比で表示 */
+    .work-card img[src="./media/job.jpg"] {
+        max-width: 280px;
+        height: auto;
+        aspect-ratio: auto;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* カテゴリ・並べ替えを縦に並べる */
+    .works-controls,
+    body.weather-enabled .works-controls {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    .works-controls select {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        min-height: 44px;
+        border-radius: 8px;
+        font-size: 16px;
+    }
+
+    .work-category {
+        padding-top: 10px;
+        font-size: 14px;
+    }
+
+    .work-year {
+        font-size: 13px;
+    }
+
+    /* Contact */
+    footer,
+    body.weather-enabled footer {
+        padding: 20px 16px;
+        overflow-wrap: anywhere;
+    }
+
+    /* 天気表示と現在地ボタン */
+    .weather-status,
+    body.weather-enabled .weather-status {
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    #weather-status,
+    .weather-credit,
+    .weather-location-note {
+        max-width: 100%;
+        overflow-wrap: anywhere;
+    }
+
+    #weather-location {
+        width: 100%;
+        min-height: 44px;
+        white-space: normal;
+    }
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>Yuki Watanabe</title>
+        <link rel="stylesheet" href="style.css">
+        
+    </head>
+
+    <body>
+        <header>
+            <a href="#top">Yuki Watanabe</a>
+
+            <nav>
+                <a href="#about">About</a>
+                <a href="#works">Works</a>
+            </nav>
+        </header>
+
+        <main>
+            <section id="top">
+                <div class="photo-switcher">
+                    <input type="radio" name="photo" id="photo1" checked>
+                    <input type="radio" name="photo" id="photo2">
+                    <input type="radio" name="photo" id="photo3">
+                    <input type="radio" name="photo" id="photo4">
+
+                    <div class="photos">
+                        <img class="pic1" src="./media/hellicopter.jpg" alt="hellicopter">
+                        <img class="pic2" src="./media/sleeping cat.jpg" alt="Sleeping Cat">
+                        <img class="pic3" src="./media/white cat.jpg" alt="White Cat">
+                        <img class="pic4" src="./media/Kangaroo.jpg" alt="Kangaroo">
+                    </div>
+
+                    <div class="photo-buttons">
+                        <label class="button2" for="photo2">Change Photo</label>
+                        <label class="button3" for="photo3">Change Photo</label>
+                        <label class="button4" for="photo4">Change Photo</label>
+                        <label class="button1" for="photo1">Change Photo</label>
+                    </div>
+                </div>
+
+                <h2>
+                    Yuki Watanabe<br>
+                    Portfolio
+                </h2>
+            </section>
+
+            <section id="about">
+                <h3>About</h3>
+
+                <p>
+                    渡辺優貴<br>
+                    東京都市大学デザイン・データ科学部</br>
+                </p>
+
+                <p>
+                    デザインとデータの活用について学びながら、HTML・CSS・JavaScriptを使ったウェブ制作に取り組んでいます。<br>
+                    新しい体験に挑戦することが好きで、旅行やアウトドアなど、さまざまな活動を楽しんでいます。オーストラリアへの留学では、異なる文化や価値観に触れる経験をしました。<br>
+                    2025年3月から、ノジマで接客・販売のアルバイトを続けています。このサイトでは、学びや活動の記録を写真とともに紹介しています。
+                </p>
+            </section>
+
+            <section id="works">
+                <h3>Works</h3>
+
+                <div class="works-controls">
+                    <select id="category">
+                        <option value="all">すべてのカテゴリ</option>
+                    </select>
+
+                    <select id="sort">
+                        <option value="new">新しい順</option>
+                        <option value="old">古い順</option>
+                        <option value="title">タイトル順</option>
+                    </select>
+                </div>
+
+                <div id="works-grid"></div>
+            </section>
+        </main>
+
+        <footer>
+            <h2>Contact</h2>
+
+            <p>
+                If you would like to get in touch, please email me at
+                <a href="mailto: g2546105@tcu.ac.jp">g2546105@tcu.ac.jp</a>
+            </p>
+
+            <p>© 2026 Yuki Watanabe</p>
+        </footer>
+
+        <script src="works.js"></script>
+        <script src="weather.js"></script>
+        <script src="fishing-egg.js"></script>
+        <script src="shooting-egg.js"></script>
+    </body>
+</html>
